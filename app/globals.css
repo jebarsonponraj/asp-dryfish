@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #ffffff;
+  
+}
+
+.nav-bg{
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.pause-animation {
+  animation-play-state: paused !important;
+}
+
+.marquee-container:hover .animate-marquee {
+  animation-play-state: paused;
+}
