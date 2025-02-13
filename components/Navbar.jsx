@@ -9,10 +9,11 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { title: "About ASP", href: "#about" },
-    { title: "Our Prodcuts", href: "#products" },
+    { title: "About", href: "#about" },
+    { title: "Prodcuts", href: "#products" },
     { title: "Gallery", href: "#gallery" },
     { title: "Why us", href: "#whyus" },
+    {title: "Contact", href: "#contact" }
   ];
 
   return (

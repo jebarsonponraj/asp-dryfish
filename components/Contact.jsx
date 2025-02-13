@@ -33,7 +33,7 @@ const Contact = () => {
     };
 
     return (
-        <div className="bg-[#FCF1DF] py-16">
+        <div id="contact" className="bg-[#FCF1DF] py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Title */}
                 <h2 className="font-instrument text-black text-4xl md:text-7xl mb-12">

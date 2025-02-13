@@ -21,9 +21,9 @@ const Benefits = () => {
   ];
 
   return (
-    <div className="bg-[#FFE1C2] py-16 overflow-hidden">
+    <div id="whyus" className="bg-[#FFE1C2] py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-instrument text-[#F37C3F] text-4xl md:text-7xl text-center mb-12">
+        <h2  className="font-instrument text-[#F37C3F] text-4xl md:text-7xl text-center mb-12">
           Why ASP Dryfish?
         </h2>
 

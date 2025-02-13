@@ -5,9 +5,9 @@ import Image from "next/image";
 
 const Guru = () => {
     return (
-        <div className="bg-[#FCF1DF] py-16">
+        <div id="products" className="bg-[#FCF1DF] py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
-                <h2 className="font-instrument text-[#F37C3F] text-4xl md:text-7xl text-center md:text-left ml-0 md:ml-12 mb-12">
+                <h2  className="font-instrument text-[#F37C3F] text-4xl md:text-7xl text-center md:text-left ml-0 md:ml-12 mb-12">
                     Our Products
                 </h2>
 
