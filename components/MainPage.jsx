@@ -5,6 +5,7 @@ import Verse from './Verse'
 import Products from './Products'
 import Gallery from './Gallery'
 import Benefits from './Benefits'
+import Recipe from './Recipe'
 import Contact from './Contact'
 import Footer from './Footer'
 
@@ -18,6 +19,7 @@ const MainPage = () => {
       <Products />
       <Gallery />
       <Benefits />
+      <Recipe />
       <Contact />
       <Footer />
     </div>

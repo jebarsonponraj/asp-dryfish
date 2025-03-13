@@ -1,0 +1,112 @@
+import FishCurry from "@/public/assets/fish_curry.jpeg";
+import NethiliGravy from "@/public/assets/nethili_gravy.jpeg";
+import KaruvaduThokku from "@/public/assets/karuvadu_thokku.jpeg";
+import MaasiSambal from "@/public/assets/maasi_sambal.jpeg";
+
+const RecipeData = {
+    "dry-fish-kulambu": {
+        title: "Dry Fish Kulambu",
+        image: FishCurry,
+        ingredients: [
+            "Cumins - 1/2 spoon",
+            "Shallots – 100g",
+            "Grated Coconut – 50g",
+            "Chilli Powder – 2 1⁄2 spoons",
+            "Coriander Powder – 1 1⁄2 spoons",
+            "Turmeric Powder – Small pinch",
+            "Tamarind – Lemon size",
+            "DryFish- 6 to 7",
+            "Tomato – 1",
+            "Drumstick – 1",
+            "Brinjal – 50g",
+            "Salt to taste",
+            "Mustard – 1 spoon",
+            "Fenugreek –1 spoon",
+            "Ground nut Oil – 3 spoon",
+            "Seasame Oil –3 spoon",
+            "Curry Leaves",
+        ],
+        procedure: [
+            "Grind – Grated coconut, shallots, cumins, curry leaves into a nice paste.",
+            "In a pan – Add this paste and add chilli powder, coriander powder, turmeric powder, tomato, drumstick and brinjal.",
+            "Then add tamarind soaked water.",
+            "Leave it to boil for 5 minutes.",
+            "Now add washed dry fish into it.",
+            "Add salt to taste.",
+            "Leave it to boil for 10 minutes.",
+            "In another pan- Pour both Oil and add mustard, fenugreek, curry leaves.",
+            "Add this into the kulambu.",
+            "Dry fish kulambu is ready to serve.",
+            "Serve it with white rice or roti.",
+        ],
+        prerequisites: ["Soak Tamarind in 1 glass of water for 30 mins"],
+    },
+    "nethili-dryfish-gravy": {
+        title: "Nethili Dry Fish Gravy",
+        image: NethiliGravy,
+        ingredients: [
+            "Onion – 1⁄4 Kg",
+            "Chilli Powder – 1⁄4 spoon",
+            "Pepper Powder – 1⁄4 spoon",
+            "Turmeric Powder – Small pinch",
+            "Tamarind – Lemon size",
+            "Dry Fish - 20",
+            "Tomato – 1",
+            "Green chilli - 3",
+            "Salt to taste",
+            "Mustard – 1/4 spoon",
+            "Fenugreek – 1/4 spoon",
+            "Seasame Oil – 5 spoons",
+        ],
+        procedure: [
+            "Add oil in a pan-put fenugreek, mustard, curry leaves in it.",
+            "Add chopped onions and sauté till it turns brown.",
+            "Add green chillies, chilli powder, pepper powder and sauté till its raw smell is gone.",
+            "Add a tomato to it.",
+            "Add tamarind soaked water to it.",
+            "Let it boil for some time.",
+            "Now add Nethili dry fish to this.",
+            "Add salt to the gravy.",
+            "Now add some pepper to give some flavor.",
+            "Now you can serve the gravy.",
+        ],
+        prerequisites: ["Soak Tamarind in 1 glass of water for 30 mins"],
+    },
+    "nethili-dryfish-fry": {
+        title: "Nethili Dry Fish Fry",
+        image: KaruvaduThokku,
+        ingredients: [
+            "Nethili dry fish",
+            "Refined Oil",
+            "Chilli Powder (or) Chicken 65 Masala",
+            "Turmeric Powder",
+        ],
+        procedure: [
+            "Marinate dry fish with chilli powder or 65 masala, turmeric powder for nearly 1 hour.",
+            "In a pan - pour some oil and fry this for 4-5 minutes.",
+            "Salt is present in the dry fish itself.",
+        ],
+    },
+    "maasi-sambal": {
+        title: "Maasi Dry Fish Sambal",
+        image: MaasiSambal,
+        ingredients: [
+            "Maasi Dry Fish - 100g",
+            "Onion – 2",
+            "Green chillies – 2",
+            "Grated coconut – 50g",
+            "Chilli powder – 2 spoons",
+            "Lemon – 1⁄2",
+            "Salt to taste",
+        ],
+        procedure: [
+            "Chop onions into small pieces.",
+            "Put it in a bowl and add Maasi dry fish.",
+            "Add green chillies and grated coconut.",
+            "Add chilli powder and salt to taste and squeeze half lemon.",
+            "Now Maasi dry fish sambal is ready to serve.",
+        ],
+    },
+};
+
+export default RecipeData;
