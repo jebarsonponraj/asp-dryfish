@@ -1,5 +1,6 @@
 "use client"
 import { ArrowPathIcon, ShieldCheckIcon, BeakerIcon } from '@heroicons/react/24/outline'
+import { motion } from "framer-motion"
 
 const Benefits = () => {
   const benefits = [
@@ -23,14 +24,24 @@ const Benefits = () => {
   return (
     <div id="whyus" className="bg-[#FFE1C2] py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2  className="font-instrument text-[#F37C3F] text-4xl md:text-7xl text-center mb-12">
+        <motion.h2
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="font-instrument text-[#F37C3F] text-4xl md:text-7xl text-center mb-12"
+        >
           Why ASP Dryfish?
-        </h2>
+        </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
               className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
             >
               <div className="flex flex-col items-center text-center cursor-pointer">
@@ -44,7 +55,7 @@ const Benefits = () => {
                   {benefit.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

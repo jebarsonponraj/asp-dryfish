@@ -1,4 +1,5 @@
 'use client';
+import { motion } from "framer-motion";
 import Image from "next/image"
 import Link from "next/link"
 import FishCurry from "@/public/assets/fish_curry.jpeg";
@@ -37,27 +38,39 @@ const Recipe = () => {
   return (
     <div className="bg-[#FCF1DF] py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-instrument text-[#F37C3F] text-4xl md:text-7xl text-center mb-12">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="font-instrument text-[#F37C3F] text-4xl md:text-7xl text-center mb-12"
+        >
           Recipes
-        </h2>
+        </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {recipes.map((recipe) => (
-            <Link href={`/recipes/${recipe.id}`} key={recipe.id}>
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer">
-                <div className="relative h-48 w-full">
-                  <Image
-                    src={recipe.image}
-                    alt={recipe.title}
-                    fill
-                    className="object-cover"
-                  />
+          {recipes.map((recipe, index) => (
+            <motion.div
+              key={recipe.id}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Link href={`/recipes/${recipe.id}`}>
+                <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer">
+                  <div className="relative h-48 w-full">
+                    <Image
+                      src={recipe.image}
+                      alt={recipe.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-xl font-semibold text-[#F37C3F] mb-2">{recipe.title}</h3>
+                    <p className="text-gray-600 text-sm">{recipe.description}</p>
+                  </div>
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-semibold text-[#F37C3F] mb-2">{recipe.title}</h3>
-                  <p className="text-gray-600 text-sm">{recipe.description}</p>
-                </div>
-              </div>
-            </Link>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>

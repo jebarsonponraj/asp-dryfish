@@ -1,61 +1,47 @@
+'use client';
 import TunaFish from "@/public/assets/tuna-fish.jpg";
 import PonyFish from "@/public/assets/pony-fish.jpg";
 import AnchovyFish from "@/public/assets/anchovy-fish.jpg";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Guru = () => {
     return (
         <div id="products" className="bg-[#FCF1DF] py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
-                <h2  className="font-instrument text-[#F37C3F] text-4xl md:text-7xl text-center md:text-left ml-0 md:ml-12 mb-12">
+                <motion.h2
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="font-instrument text-[#F37C3F] text-4xl md:text-7xl text-center md:text-left ml-0 md:ml-12 mb-12"
+                >
                     Our Products
-                </h2>
+                </motion.h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-                    {/* Tuna Fish Card */}
-                    <div className="group relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-xl">
-                        <div className="relative h-[300px] w-full transform transition-transform duration-300 group-hover:scale-105">
-                            <Image
-                                src={TunaFish}
-                                alt="Tuna Fish"
-                                fill
-                                className="object-cover rounded-xl"
-                            />
-                        </div>
-                        <h3 className="mt-4 text-center text-xl font-semibold text-[#F37C3F] group-hover:text-[#d16632]">
-                            Premium Tuna Fish
-                        </h3>
-                    </div>
-
-                    {/* Pony Fish Card */}
-                    <div className="group relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-xl">
-                        <div className="relative h-[300px] w-full transform transition-transform duration-300 group-hover:scale-105">
-                            <Image
-                                src={PonyFish}
-                                alt="Pony Fish"
-                                fill
-                                className="object-cover rounded-xl"
-                            />
-                        </div>
-                        <h3 className="mt-4 text-center text-xl font-semibold text-[#F37C3F] group-hover:text-[#d16632]">
-                            Fresh Pony Fish
-                        </h3>
-                    </div>
-
-                    {/* Anchovy Fish Card */}
-                    <div className="group relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-xl">
-                        <div className="relative h-[300px] w-full transform transition-transform duration-300 group-hover:scale-105">
-                            <Image
-                                src={AnchovyFish}
-                                alt="Anchovy Fish"
-                                fill
-                                className="object-cover rounded-xl"
-                            />
-                        </div>
-                        <h3 className="mt-4 text-center text-xl font-semibold text-[#F37C3F] group-hover:text-[#d16632]">
-                            Dried Anchovy Fish
-                        </h3>
-                    </div>
+                    {[TunaFish, PonyFish, AnchovyFish].map((fish, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: index * 0.2 }}
+                            viewport={{ once: true }}
+                            className="group relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-xl"
+                        >
+                            <div className="relative h-[300px] w-full transform transition-transform duration-300 group-hover:scale-105">
+                                <Image
+                                    src={fish}
+                                    alt="Fish"
+                                    fill
+                                    className="object-cover rounded-xl"
+                                />
+                            </div>
+                            <h3 className="mt-4 text-center text-xl font-semibold text-[#F37C3F] group-hover:text-[#d16632]">
+                                {fish === TunaFish ? "Premium Tuna Fish" : fish === PonyFish ? "Fresh Pony Fish" : "Dried Anchovy Fish"}
+                            </h3>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </div>

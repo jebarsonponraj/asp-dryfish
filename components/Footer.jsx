@@ -1,14 +1,22 @@
+'use client';
 import Logo from '../public/assets/AspLogo.png'
 import Image from 'next/image'
 import facebookIcon from '@/public/assets/facebookIcon.png'
 import instagramIcon from '@/public/assets/instagramIcon.png'
 import youtubeIcon from '@/public/assets/youtubeIcon.png'
+import { motion } from "framer-motion"
 
 const Footer = () => {
   return (
     <footer className="bg-[#1E1E1E] text-white pt-16 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between gap-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex flex-col md:flex-row justify-between gap-8"
+        >
           {/* Logo and Tagline */}
           <div className="flex flex-col items-left md:w-1/3">
             <div className="w-1/3">
@@ -68,15 +76,20 @@ const Footer = () => {
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-       {/* Horizontal Line and Copyright */}
-       <div className="mt-12">
-          <hr className="border-[#525252]" />
-          <p className="text-gray-400 text-center mt-6 text-sm">
-            ©{new Date().getFullYear()} ASP Dryfish Merchants. All rights reserved.
-          </p>
-        </div>
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        viewport={{ once: true }}
+        className="mt-12"
+      >
+        <hr className="border-[#525252]" />
+        <p className="text-gray-400 text-center mt-6 text-sm">
+          ©{new Date().getFullYear()} ASP Dryfish Merchants. All rights reserved.
+        </p>
+      </motion.div>
     </footer>
   )
 }

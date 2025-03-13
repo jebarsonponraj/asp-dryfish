@@ -1,5 +1,7 @@
+'use client';
 import AboutImage from "@/public/assets/About.png"
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
@@ -10,7 +12,11 @@ const About = () => {
       <div  className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Left Column - Text Content */}
-          <div 
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
             className="space-y-6"
           >
             <h2 className="font-instrument text-[#F37C3F] text-4xl md:text-7xl"><strong>About us</strong></h2>
@@ -28,10 +34,14 @@ const About = () => {
                 At <span className="text-[#F37C3F]">ASP Dryfish</span>, we don't just sell dried fish—we deliver <strong>consistency, quality, and trust</strong>.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column - Image */}
-          <div 
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
             className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] mx-auto"
           >
             <Image 
@@ -42,7 +52,7 @@ const About = () => {
               className="object-cover rounded-lg"
               priority
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
